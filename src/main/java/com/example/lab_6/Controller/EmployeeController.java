@@ -57,7 +57,7 @@ public class EmployeeController {
     @GetMapping("/search{position}")
     public ResponseEntity searchEmployee(@PathVariable String position){
         supervisorList.clear();
-        if (!position.equalsIgnoreCase("supervisor") && !position.equalsIgnoreCase("coordinator")) {
+        if (!position.equalsIgnoreCase("supervisor")) {
             return ResponseEntity.status(400).body(new ApiResponse("Invalid position, must be 'supervisor' or 'coordinator'"));
         }
         for(Employee employee:listEmployees){
