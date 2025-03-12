@@ -23,9 +23,11 @@ public class Employee {
     private String name;
 
     @Email
+    @NotEmpty(message = "email should be not empty")
     private String  email;
 
     @Pattern(regexp = "^05\\d{8}$",message = "phone number must start with '05' and must consists exactly 10 digits. ")
+    @NotEmpty(message = "Phone number should be not empty")
     private String phoneNumber;
 
     @NotNull(message = "age must be not null")
